@@ -57,4 +57,15 @@ reduce(function,sequence)：function接收的参数个数只能为2，先把sequ
 from functools import reduce          
 reduce(lambda x,y:x+y,range(1,101))
 5050
+-------------------------------------------------------------------------------
+#Error and Exception
 
+def shout_echo(word1, echo=1):
+  if echo<0:
+        raise ValueError('echo must be greater than or equal to 0')
+or
+  try:
+    return x**0.5
+  except:
+    print("x must be a number")
+    
