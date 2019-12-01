@@ -1,0 +1,45 @@
+Global scope vs local scope
+
+def square(value):
+"""Returns the square of a number."""
+  new_val = value ** 2
+  return new_val
+In [2]: square(3)
+Out[2]: 9
+In [3]: new_val (error)
+
+variables defined inside a function cannot be called globally
+
+global variable can be called inside a function and chagned 
+
+num=5
+
+def func2():
+    global num
+    double_num = num * 2
+    num = 6
+    print(double_num)
+
+func2()
+Out: 10
+-------------------------------------------------------------------------------
+#*args is a number of strings, a tuple
+def gibberish(*args):
+
+#**kwarg is a dictionary 
+def print_all(**kwargs):
+  for key, value in kwargs.items():
+    print(key + ": " + value)
+
+-------------------------------------------------------------------------------
+#lambda function with map, filter, and reduce
+list1 = [3,5,-4,-1,0,-2,-6]
+sorted(list1, key=lambda x: abs(x))
+map(function,sequence)：把sequence中的值当参数逐个传给function，返回一个包含函数执行结果的list。
+如果function有两个参数，即map(function,sequence1,sequence2)。
+#求1~20的平方
+list(map(lambda x:x*x,range(1,21)))
+
+
+
+
