@@ -33,13 +33,28 @@ def print_all(**kwargs):
 
 -------------------------------------------------------------------------------
 #lambda function with map, filter, and reduce
+
 list1 = [3,5,-4,-1,0,-2,-6]
 sorted(list1, key=lambda x: abs(x))
+
 map(function,sequence)：把sequence中的值当参数逐个传给function，返回一个包含函数执行结果的list。
 如果function有两个参数，即map(function,sequence1,sequence2)。
+
 #求1~20的平方
 list(map(lambda x:x*x,range(1,21)))
 
+filter(function,sequence)：对sequence中的item依次执行function(item)，将执行结果为True的item组成一个List/String/Tuple
+(取决于sequence的类型)返回。
 
+#求1~20之间的偶数
+list(filter(lambda x:x%2 == 0,range(1,21))) 
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
+reduce(function,sequence)：function接收的参数个数只能为2，先把sequence中第一个值和第二个值当参数传给function，
+再把function的返回值和第三个值当参数传给function，然后只返回一个结果。
+
+求1~100之和
+from functools import reduce          
+reduce(lambda x,y:x+y,range(1,101))
+5050
 
